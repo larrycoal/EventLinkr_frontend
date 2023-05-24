@@ -1,0 +1,66 @@
+.header {
+  padding: 1rem 2rem;
+  background-color: #191717;
+  color: white;
+}
+.header nav {
+  display: flex;
+}
+.header nav ul {
+  display: flex;
+  gap: 18px;
+  list-style: none;
+}
+.header nav li{
+    font-size: 1.2rem;
+}
+.header nav h2 {
+  flex: 1;
+  font-size: 1.8rem;
+}
+/* .landing_wrapper {
+
+} */
+.hero_sect {
+  background-position: center;
+  background-size: cover;
+  height: 500px;
+  color: white;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1001%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(24%2c 24%2c 38%2c 1)'%3e%3c/rect%3e%3cpath d='M589.11 590.43C716.76 546.14 639.41 186.41 927.65 169.12 1215.9 151.83 1432.43 40.89 1604.74 40.32' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M819.29 589.33C960.39 536.87 988.7 118.02 1186.94 112.45 1385.19 106.88 1452.46 286.96 1554.6 291.65' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M387.66 671.62C551.49 671.18 696.81 561.17 1032.95 557.32 1369.1 553.47 1504.09 299.12 1678.25 294.12' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M473.58 574.93C596.94 554.44 545.38 262.2 856.16 252.72 1166.93 243.24 1426.05 96.72 1621.31 95.92' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M412.28 638.02C580.27 623.7 670.23 292.44 984.05 280.42 1297.87 268.4 1407.23 119.58 1555.82 118.02' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1001'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+}
+.hero_sect .container{
+    display: flex;
+    margin: 0 3rem;
+}
+.hero_sect .container .left,
+.hero_sect .container .right {
+  flex: 1;
+  margin-top: 5rem;
+  letter-spacing: .8px;
+  padding: 1rem 2rem;
+}
+.hero_sect .container .left h1{
+    font-size: 4rem;
+    font-weight: bold;
+}
+.hero_sect .container .left p:nth-child(2){
+    font-size: 2.1rem;
+    margin: 1rem 0;
+}
+.hero_sect .container .left p:nth-child(2) span{
+    color: #D4ADFC;
+}
+.hero_sect .container .left p:nth-child(3){
+    font-size: 1.4rem;
+    line-height: 35px;
+    margin: 10px 0;
+}
+.hero_sect .container .left button{
+    padding: 1rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #5C469C;
+    color: white;
+}
