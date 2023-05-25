@@ -1,5 +1,8 @@
 import React from "react";
-import styles from "./home.module.css"
+import styles from "./home.module.css";
+import { BsLink, BsFillCalendar2CheckFill, BsShareFill } from "react-icons/bs";
+import { CiLocationOn } from "react-icons/ci";
+import { IoIosPeople } from "react-icons/io";
 const LandingPage = () => {
   return (
     <div className={styles.landing_wrapper}>
@@ -16,7 +19,32 @@ const LandingPage = () => {
             </p>
             <button>Get started</button>
           </div>
-          <div className={styles.left}>An image</div>
+          <div className={styles.right}>
+            <div className={styles.logo_container}>
+              <span>
+                <BsLink />
+              </span>
+              <span>
+                <BsFillCalendar2CheckFill />
+              </span>
+              <span>
+                <CiLocationOn />
+              </span>
+              <span>
+                <BsShareFill />
+              </span>
+              <span>
+                <IoIosPeople />
+              </span>
+              {/*  */}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={styles.howto}>
+        <div className={styles.container}>
+            <h2>Getting Started</h2>
+            <div></div>
         </div>
       </section>
     </div>
