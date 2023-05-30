@@ -27,6 +27,7 @@
   height: 500px;
   color: white;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1001%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(24%2c 24%2c 38%2c 1)'%3e%3c/rect%3e%3cpath d='M589.11 590.43C716.76 546.14 639.41 186.41 927.65 169.12 1215.9 151.83 1432.43 40.89 1604.74 40.32' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M819.29 589.33C960.39 536.87 988.7 118.02 1186.94 112.45 1385.19 106.88 1452.46 286.96 1554.6 291.65' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M387.66 671.62C551.49 671.18 696.81 561.17 1032.95 557.32 1369.1 553.47 1504.09 299.12 1678.25 294.12' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M473.58 574.93C596.94 554.44 545.38 262.2 856.16 252.72 1166.93 243.24 1426.05 96.72 1621.31 95.92' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3cpath d='M412.28 638.02C580.27 623.7 670.23 292.44 984.05 280.42 1297.87 268.4 1407.23 119.58 1555.82 118.02' stroke='rgba(51%2c121%2c194%2c0.58)' stroke-width='2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1001'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+  background-attachment: fixed;
 }
 .hero_sect .container {
   display: flex;
@@ -82,11 +83,11 @@
 }
 .hero_sect .container .right .logo_container span:nth-child(1) {
   top: -30px;
-  left:45%
+  left: 45%;
 }
 .hero_sect .container .right .logo_container span:nth-child(2) {
   bottom: -30px;
-  left:45%
+  left: 45%;
 }
 .hero_sect .container .right .logo_container span:nth-child(3) {
   left: -20px;
@@ -103,6 +104,85 @@
   right: 50%;
   font-size: 9rem;
 }
-.hero_sect .container .right .logo_container span:nth-child(5) svg{
-    fill: #F9D949;
+.hero_sect .container .right .logo_container span:nth-child(5) svg {
+  fill: #f9d949;
+}
+
+/*
+===============================
+Insturction section
+===============================
+*/
+.howto {
+  padding: 2rem;
+}
+.howto .container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.howto .container h2 {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+.howto .container .instructions {
+  padding: 1rem;
+}
+.howto .container .instructions ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2rem;
+  padding: 1rem;
+}
+.howto .container .instructions ul li {
+  min-width: 40%;
+  flex: 1;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+}
+.howto .container .instructions ul li h3 {
+  font-size: 1.3rem;
+}
+
+/*
+===============================
+Team section
+===============================
+*/
+
+.team {
+  margin: 0 auto;
+  padding: 1rem;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1000%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M0%2c355.409C74.823%2c348.429%2c155.465%2c380.749%2c220.538%2c343.163C286.306%2c305.176%2c311.242%2c225.629%2c343.631%2c156.931C376.408%2c87.41%2c413.786%2c17.805%2c410.132%2c-58.968C406.292%2c-139.649%2c379.648%2c-222.322%2c322.847%2c-279.748C267.356%2c-335.848%2c184.904%2c-351.284%2c107.232%2c-365.197C36.22%2c-377.917%2c-33.208%2c-366.519%2c-104.625%2c-356.32C-188.292%2c-344.372%2c-287.805%2c-361.038%2c-346.658%2c-300.381C-405.496%2c-239.739%2c-399.326%2c-141.218%2c-395.214%2c-56.823C-391.623%2c16.885%2c-347.938%2c78.257%2c-324.797%2c148.33C-298.076%2c229.243%2c-320.517%2c341.125%2c-248.667%2c386.934C-176.759%2c432.78%2c-84.911%2c363.33%2c0%2c355.409' fill='%230b2239'%3e%3c/path%3e%3cpath d='M1440 958.348C1514.626 965.81 1585.63 925.149 1646.595 881.469 1705.501 839.264 1756.685 783.83 1779.549 715.067 1801.305 649.637 1788.219 578.949 1769.224 512.665 1752.088 452.87 1717.563 401.793 1676.407 355.153 1635.571 308.876 1590.366 266.343 1532.627 244.541 1472.034 221.66199999999998 1405.99 214.685 1342.872 229.214 1277.44 244.276 1221.853 282.851 1171.796 327.6 1115.9470000000001 377.526 1036.375 427.23699999999997 1037.568 502.139 1038.7939999999999 579.084 1135.542 615.351 1177.409 679.921 1211.05 731.804 1215.926 797.665 1258.352 842.649 1308.625 895.954 1367.092 951.058 1440 958.348' fill='%23113255'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1000'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+background-attachment: fixed;
+background-size: cover;
+background-repeat: no-repeat;
+  color: white;
+
+}
+.team h2 {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 2rem 0;
+}
+.team .container {
+  display: flex;
+  width: 80%;
+  margin: 1rem auto;
+}
+.team .container div {
+  flex: 1;
+}
+.team .container .right h3{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+.team .container .right p{
+    line-height: 30px;
+    letter-spacing: .5px;
+    font-size: 1.2rem;
 }
