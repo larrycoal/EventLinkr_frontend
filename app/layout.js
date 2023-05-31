@@ -1,7 +1,8 @@
 import "./globals.css";
-import styles from "./home.module.css"
+import styles from "./home.module.css";
 import { Inter } from "next/font/google";
-import Image from "next/image"
+import Image from "next/image";
+import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -15,18 +16,22 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <header className={styles.header}>
           <nav>
-            <h2>
-              EventLinkr
-            </h2>
+            <h2>EventLinkr</h2>
             <ul>
-              <li>Home</li>
-              <li>Dashboard</li>
-              <li>Create Account</li>
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/dashboard">Dashboard</Link>
+              </li>
+              <li>
+                <Link href="/dashboard"> Create Account</Link>
+              </li>
             </ul>
           </nav>
         </header>
         {children}
-        <footer>Made with love</footer>
+        <footer className={styles.footer}>Made with love</footer>
       </body>
     </html>
   );
