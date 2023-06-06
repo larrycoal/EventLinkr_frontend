@@ -1,4 +1,6 @@
+"use client"
 import React from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
 import styles from "./home.module.css";
 import {
@@ -7,10 +9,12 @@ import {
   FaStaylinked,
 } from "react-icons/fa";
 import lanreBitmoji from "../assets/images/lanre_bitmoji.png";
-import { BsLink, BsFillCalendar2CheckFill, BsShareFill } from "react-icons/bs";
-import { CiLocationOn } from "react-icons/ci";
+import {BsFillCalendar2CheckFill } from "react-icons/bs";
 import { IoIosPeople } from "react-icons/io";
+
 const LandingPage = () => {
+    const {data,status} = useSession()
+    console.log(data,status)
   return (
     <div className={styles.landing_wrapper}>
       <section className={styles.hero_sect}>
