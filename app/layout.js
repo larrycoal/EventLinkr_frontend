@@ -1,6 +1,6 @@
 "use client"
 import "./globals.css";
-import styles from "./home.module.css";
+import styles from "../components/home.module.css";
 import { Inter } from "next/font/google";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Image from "next/image";
@@ -14,6 +14,8 @@ const inter = Inter({ subsets: ["latin"] });
 // };
 
 export default function RootLayout({ children }) {
+  // const { data, status } = useSession();
+  // console.log("layout page", data, status);
   return (
     <html lang="en">
       <ProvidersWrapper>
@@ -28,8 +30,13 @@ export default function RootLayout({ children }) {
                 <li>
                   <Link href="/dashboard">Dashboard</Link>
                 </li>
+                {
+                  <li>
+                    <button onClick={() => signIn()}> Sign In</button>
+                  </li>
+                }
                 <li>
-                  <button onClick={()=>signIn()}> Create Account</button>
+                  <button onClick={() => signOut()}> Sign out</button>
                 </li>
               </ul>
             </nav>

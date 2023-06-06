@@ -13,8 +13,8 @@ import {BsFillCalendar2CheckFill } from "react-icons/bs";
 import { IoIosPeople } from "react-icons/io";
 
 const LandingPage = () => {
-    const {data,status} = useSession()
-    console.log(data,status)
+    // const {data,status} = useSession()
+    // console.log(data,status)
   return (
     <div className={styles.landing_wrapper}>
       <section className={styles.hero_sect}>
