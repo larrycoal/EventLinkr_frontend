@@ -1,11 +1,8 @@
-"use client"
+"use client";
 import "./globals.css";
-import styles from "../components/home.module.css";
 import { Inter } from "next/font/google";
-import { useSession, signIn, signOut } from "next-auth/react";
-import Image from "next/image";
 import ProvidersWrapper from "./ProvidersWrapper";
-import Link from "next/link";
+import HeaderFooter from "@/components/header_footer";
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata = {
@@ -20,29 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <ProvidersWrapper>
         <body className={inter.className}>
-          <header className={styles.header}>
-            <nav>
-              <h2>EventLinkr</h2>
-              <ul>
-                <li>
-                  <Link href="/">Home</Link>
-                </li>
-                <li>
-                  <Link href="/dashboard">Dashboard</Link>
-                </li>
-                {
-                  <li>
-                    <button onClick={() => signIn()}> Sign In</button>
-                  </li>
-                }
-                <li>
-                  <button onClick={() => signOut()}> Sign out</button>
-                </li>
-              </ul>
-            </nav>
-          </header>
-          {children}
-          <footer className={styles.footer}>Made with love</footer>
+          <HeaderFooter>{children}</HeaderFooter>
         </body>
       </ProvidersWrapper>
     </html>
