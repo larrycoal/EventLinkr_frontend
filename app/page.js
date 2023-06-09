@@ -1,10 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import LandingPage from "../components/LandingPage";
+import LandingPage from "./components/LandingPage";
 export default function Home() {
   return (
-    <main>
+    <>
       <LandingPage />
-    </main>
+    </>
   );
 }

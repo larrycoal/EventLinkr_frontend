@@ -8,7 +8,7 @@ import {
   FaLocationArrow,
   FaStaylinked,
 } from "react-icons/fa";
-import lanreBitmoji from "../assets/images/lanre_bitmoji.png";
+import lanreBitmoji from "../../assets/images/lanre_bitmoji.png";
 import {BsFillCalendar2CheckFill } from "react-icons/bs";
 import { IoIosPeople } from "react-icons/io";
 

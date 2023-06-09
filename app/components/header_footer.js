@@ -5,7 +5,6 @@ import { useSession, signIn, signOut } from "next-auth/react";
 
 const HeaderFooter = ({ children }) => {
   const { data, status } = useSession();
-  console.log("layout page", data, status);
   return (
     <>
       <header className={styles.header}>

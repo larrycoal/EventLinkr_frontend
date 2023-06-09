@@ -1,8 +1,9 @@
 "use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
+import "bootstrap/dist/css/bootstrap.css";
 import ProvidersWrapper from "./ProvidersWrapper";
-import HeaderFooter from "@/components/header_footer";
+import HeaderFooter from "@/app/components/header_footer";
 const inter = Inter({ subsets: ["latin"] });
 
 // export const metadata = {
@@ -17,7 +18,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <ProvidersWrapper>
         <body className={inter.className}>
-          <HeaderFooter>{children}</HeaderFooter>
+          <HeaderFooter>
+            <main>{children}</main>
+          </HeaderFooter>
         </body>
       </ProvidersWrapper>
     </html>
