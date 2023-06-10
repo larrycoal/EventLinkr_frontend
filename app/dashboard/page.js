@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import style from "./dashboard.module.css";
 import { useSession, signIn, signOut } from "next-auth/react";
 import Modal from "../components/Modal";
-
+import * as mdb from "mdb-ui-kit";
 export default function page() {
   const { data, status } = useSession();
   const [events, setEvents] = useState(null);
@@ -34,16 +34,14 @@ export default function page() {
               <p>Welcome back!</p>
               <h2>{data?.user.name}</h2>
             </div>
-            <div className={style.right}>
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-mdb-toggle="modal"
-                data-mdb-target="#exampleModal"
-              >
-                Create New Event
-              </button>
-            </div>
+            <button
+              type="button"
+              className={`${style.right}`}
+              data-mdb-toggle="modal"
+              data-mdb-target="#exampleModal"
+            >
+              Create New Event
+            </button>
           </div>
           <div className={style.bottom}>
             <table class="table table-striped">
@@ -82,7 +80,7 @@ export default function page() {
           </div>
         </div>
       </div>
-      <Modal/>
+      <Modal />
     </>
   );
 }

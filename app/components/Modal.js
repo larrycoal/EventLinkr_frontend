@@ -1,6 +1,7 @@
-import React from "react";
+import React,{useState} from "react";
 
 const Modal = () => {
+    const[tab,setTab] = useState(1)
   return (
     <>
       <div
@@ -78,10 +79,12 @@ const Modal = () => {
                     data-mdb-toggle="pill"
                     href="#ex1-pills-1"
                     role="tab"
-                    aria-controls="ex1-pills-1"
+                    aria-controls={`ex1-pills-${tab}`}
                     aria-selected="true"
+                    onClick={()=>setTab(tab-1)}
+                    aria-disabled={tab > 1 ? "false" : "true"}
                   >
-                    1
+                    Prev
                   </a>
                 </li>
                 <li class="nav-item" role="presentation">
@@ -91,23 +94,11 @@ const Modal = () => {
                     data-mdb-toggle="pill"
                     href="#ex1-pills-2"
                     role="tab"
-                    aria-controls="ex1-pills-2"
+                    aria-controls={`ex1-pills-${tab}`}
                     aria-selected="false"
+                    onClick={()=>setTab(tab+1)}
                   >
-                    2
-                  </a>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <a
-                    class="nav-link"
-                    id="ex1-tab-3"
-                    data-mdb-toggle="pill"
-                    href="#ex1-pills-3"
-                    role="tab"
-                    aria-controls="ex1-pills-3"
-                    aria-selected="false"
-                  >
-                    3
+                    Next
                   </a>
                 </li>
               </ul>

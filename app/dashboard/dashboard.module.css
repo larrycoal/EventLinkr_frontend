@@ -17,6 +17,15 @@ position: relative;
 .dashboard_container .top{
     display: flex;
     justify-content: space-between;
+    margin: 3rem 0;
+}
+.dashboard_container .top .right{
+    height: fit-content;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
 }
 .dashboard_container .top .left{
     color: white;
