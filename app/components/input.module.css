@@ -1,0 +1,11 @@
+.input_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.input_wrapper label{
+  color: rgb(33, 32, 32);
+}
+.input_wrapper input{
+    padding: 10px;
+}

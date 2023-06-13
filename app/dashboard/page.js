@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import style from "./dashboard.module.css";
 import { useSession, signIn, signOut } from "next-auth/react";
-import Modal from "../components/Modal";
+import CreateEvent from "../components/CreateEvent";
 import * as mdb from "mdb-ui-kit";
 export default function page() {
   const { data, status } = useSession();
@@ -80,7 +80,7 @@ export default function page() {
           </div>
         </div>
       </div>
-      <Modal />
+      <CreateEvent />
     </>
   );
 }

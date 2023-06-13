@@ -1,7 +1,8 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
+import { DateInput, LocationInput, TextInput } from "./input";
 
-const Modal = () => {
-    const[tab,setTab] = useState(1)
+const CreateEvent = () => {
+  const [tab, setTab] = useState(1);
   return (
     <>
       <div
@@ -17,7 +18,7 @@ const Modal = () => {
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">
-                Modal pagination example
+                Create new event
               </h5>
               <button
                 type="button"
@@ -34,12 +35,20 @@ const Modal = () => {
                   role="tabpanel"
                   aria-labelledby="ex1-tab-1"
                 >
-                  <h5 class="my-3">Page 1</h5>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Aspernatur ratione minima suscipit! Ab quam distinctio
-                    tempora ad eveniet corporis repellendus?
-                  </p>
+                  <h2>Enter Event Details</h2>
+                  <TextInput
+                    name="eventName"
+                    type="text"
+                    label="Event Name"
+                    placeholder="Enter event name"
+                  />
+                  <DateInput
+                    name="eventDate"
+                    type="datetime-local"
+                    placeholder="Pick event date and time"
+                    label="Event Date"
+                  />
+                  <LocationInput name="eventLocation" type="text" label="Event Location"/>
                 </div>
                 <div
                   class="tab-pane fade"
@@ -81,7 +90,7 @@ const Modal = () => {
                     role="tab"
                     aria-controls={`ex1-pills-${tab}`}
                     aria-selected="true"
-                    onClick={()=>setTab(tab-1)}
+                    onClick={() => setTab(tab - 1)}
                     aria-disabled={tab > 1 ? "false" : "true"}
                   >
                     Prev
@@ -96,7 +105,7 @@ const Modal = () => {
                     role="tab"
                     aria-controls={`ex1-pills-${tab}`}
                     aria-selected="false"
-                    onClick={()=>setTab(tab+1)}
+                    onClick={() => setTab(tab + 1)}
                   >
                     Next
                   </a>
@@ -110,4 +119,4 @@ const Modal = () => {
   );
 };
 
-export default Modal;
+export default CreateEvent;
