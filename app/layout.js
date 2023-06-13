@@ -21,8 +21,16 @@ export default function RootLayout({ children }) {
           <HeaderFooter>
             <main>{children}</main>
           </HeaderFooter>
+          <script
+            id="googlemaps"
+            type="text/javascript"
+            strategy="beforeInteractive"
+            //strategy="lazyOnload"
+            src={`https://maps.googleapis.com/maps/api/js?key=${process.env.NEXT_PUBLIC_GOOGLE_PLACES}&libraries=places`}
+          ></script>
         </body>
       </ProvidersWrapper>
     </html>
   );
 }
+//
