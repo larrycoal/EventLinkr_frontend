@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { DateInput, LocationInput, TextInput } from "./input";
 
 const CreateEvent = () => {
   const [tab, setTab] = useState(1);
+  const [eventDetails,setEventDetails] = useState({})
+  const handleEventDetails = (eventDetail)=>{
+    setEventDetails(()=>({
+      ...eventDetails,
+      ...eventDetail
+    }))
+  }
+  useEffect(()=>{
+    console.log(eventDetails)
+  },[eventDetails])
   return (
     <>
       <div
@@ -41,14 +51,21 @@ const CreateEvent = () => {
                     type="text"
                     label="Event Name"
                     placeholder="Enter event name"
+                    onChange={handleEventDetails}
                   />
                   <DateInput
                     name="eventDate"
                     type="datetime-local"
                     placeholder="Pick event date and time"
                     label="Event Date"
+                    onChange={handleEventDetails}
                   />
-                  <LocationInput name="eventLocation" type="text" label="Event Location"/>
+                  <LocationInput
+                    name="eventLocation"
+                    type="text"
+                    label="Event Location"
+                    onChange={handleEventDetails}
+                  />
                 </div>
                 <div
                   class="tab-pane fade"

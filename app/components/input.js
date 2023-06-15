@@ -8,6 +8,7 @@ import usePlacesAutocomplete, {
 const TextInput = ({ label, type, name, onChange }) => {
   const handleChange = (e) => {
     e.preventDefault();
+    onChange({ [e.target.name]: e.target.value });
   };
   return (
     <div className={style.input_wrapper}>
@@ -19,6 +20,7 @@ const TextInput = ({ label, type, name, onChange }) => {
 const DateInput = ({ label, type, name, onChange }) => {
   const handleChange = (e) => {
     e.preventDefault();
+    onChange({[e.target.name]:e.target.value})
   };
   return (
     <div className={style.input_wrapper}>
@@ -37,7 +39,6 @@ const LocationInput = ({ label, type, name, onChange }) => {
   } = usePlacesAutocomplete({
     debounce: 300,
   });
-  console.log(ready,value)
    const handleInput = (e) => {
      // Update the keyword of the input element
      setValue(e.target.value);
@@ -48,13 +49,14 @@ const LocationInput = ({ label, type, name, onChange }) => {
        // When user selects a place, we can replace the keyword without request data from API
        // by setting the second parameter to "false"
        setValue(description, false);
+       onChange({location:description})
        clearSuggestions();
 
        // Get latitude and longitude via utility functions
-       getGeocode({ address: description }).then((results) => {
-         const { lat, lng } = getLatLng(results[0]);
-         console.log("📍 Coordinates: ", { lat, lng });
-       });
+    //    getGeocode({ address: description }).then((results) => {
+    //      const { lat, lng } = getLatLng(results[0]);
+    //      console.log("📍 Coordinates: ", { lat, lng });
+    //    });
      };
 
 const renderSuggestions = () =>
