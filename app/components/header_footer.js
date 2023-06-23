@@ -5,6 +5,17 @@ import { useSession, signIn, signOut } from "next-auth/react";
 
 const HeaderFooter = ({ children }) => {
   const { data, status } = useSession();
+  const handleSignIn =async ()=>{
+    try {
+      fetch(
+        `http://localhost:1337/api/connect/google`
+      )
+        .then((res) => res.json())
+        .then(({ data }) => console.log("login data",data));
+    } catch (error) {
+      console.log(error);
+    }
+  }
   return (
     <>
       <header className={styles.header}>
@@ -19,7 +30,7 @@ const HeaderFooter = ({ children }) => {
             </li>
             {status === "unauthenticated" ? (
               <li>
-                <button onClick={() => signIn()}> Sign In</button>
+                <button onClick={() => handleSignIn()}> Sign In</button>
               </li>
             ) : (
               <li>

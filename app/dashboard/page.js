@@ -7,6 +7,7 @@ import * as mdb from "mdb-ui-kit";
 export default function page() {
   const { data, status } = useSession();
   const [events, setEvents] = useState(null);
+  const [showCreateEvent, setShowCreateEvent] = useState(false);
   const fetchEvent = useCallback(() => {
     try {
       fetch(
@@ -34,53 +35,51 @@ export default function page() {
               <p>Welcome back!</p>
               <h2>{data?.user.name}</h2>
             </div>
-            <button
-              type="button"
-              className={`${style.right}`}
-              data-mdb-toggle="modal"
-              data-mdb-target="#exampleModal"
-            >
+            <button type="button" className={`${style.right}`} onClick={()=>setShowCreateEvent(true)}>
               Create New Event
             </button>
           </div>
           <div className={style.bottom}>
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th scope="col">S/N</th>
-                  <th scope="col">Event Name</th>
-                  <th scope="col">Event Link</th>
-                  <th scope="col">Type</th>
-                  <th scope="col">RSVP</th>
-                  <th scope="col">Location</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {events &&
-                  events.map((event, idx) => (
-                    <tr key={idx}>
-                      <th scope="row">{idx + 1}</th>
-                      <td>{event.attributes.eventName}</td>
-                      <td>{event.attributes.eventLink}</td>
-                      <td>{event.attributes.eventType}</td>
-                      <td>{event.attributes.eventRSVP}</td>
-                      <td>{event.attributes.eventLocation}</td>
-                      <td>
-                        {new Date(
-                          event.attributes.eventDate
-                        ).toLocaleDateString()}
-                      </td>
-                      <td>Action</td>
-                    </tr>
-                  ))}
-              </tbody>
-            </table>
+            {!showCreateEvent ? (
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">S/N</th>
+                    <th scope="col">Event Name</th>
+                    <th scope="col">Event Link</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">RSVP</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {events &&
+                    events.map((event, idx) => (
+                      <tr key={idx}>
+                        <th scope="row">{idx + 1}</th>
+                        <td>{event.attributes.eventName}</td>
+                        <td>{event.attributes.eventLink}</td>
+                        <td>{event.attributes.eventType}</td>
+                        <td>{event.attributes.eventRSVP}</td>
+                        <td>{event.attributes.eventLocation}</td>
+                        <td>
+                          {new Date(
+                            event.attributes.eventDate
+                          ).toLocaleDateString()}
+                        </td>
+                        <td>Action</td>
+                      </tr>
+                    ))}
+                </tbody>
+              </table>
+            ) : (
+              <CreateEvent />
+            )}
           </div>
         </div>
       </div>
-      <CreateEvent />
     </>
   );
 }
