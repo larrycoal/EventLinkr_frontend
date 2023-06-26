@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { DateInput, LocationInput, TextInput, SlugInput, DescriptionInput } from "./input";
+import styles from "./createevent.module.css"
 
 const CreateEvent = () => {
   const [tab, setTab] = useState(1);
@@ -14,23 +15,21 @@ const CreateEvent = () => {
     console.log(eventDetails);
   }, [eventDetails]);
   return (
-    <div>
+    <div className={styles.createeventWrapper}>
       <section>
-        <div>
+        <div className={styles.title}>
           <span>1</span> <span>Enter Event Details</span>
         </div>
-        <div>
-          <div>
-            <div>
-              <TextInput
-                label="Event Name"
-                name="eventName"
-                onChange={handleEventDetails}
-              />
-              <SlugInput label="Event Slug" name="eventSlug" />
-            </div>
+        <div className={styles.formField}>
+          <div className={styles.inputWrapper}>
+            <TextInput
+              label="Event Name"
+              name="eventName"
+              onChange={handleEventDetails}
+            />
+            <SlugInput label="Event Slug" name="eventSlug" />
           </div>
-          <div>
+          <div className={styles.inputWrapper}>
             <DateInput
               label="Event Date"
               name="eventDate"
@@ -42,7 +41,7 @@ const CreateEvent = () => {
               onChange={handleEventDetails}
             />
           </div>
-          <div>
+          <div className={styles.inputWrapper}>
             <DescriptionInput
               name="eventDescription"
               label="Event Description"
@@ -52,8 +51,16 @@ const CreateEvent = () => {
           </div>
         </div>
       </section>
-      <section></section>
-      <section></section>
+      <section>
+        <div className={styles.title}>
+          <span>2</span> <span>Select Template</span>
+        </div>
+      </section>
+      <section>
+        <div className={styles.title}>
+          <span>3</span> <span>Enter Event Details</span>
+        </div>
+      </section>
     </div>
   );
 };
