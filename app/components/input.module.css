@@ -9,3 +9,22 @@
 .input_wrapper input{
     padding: 10px;
 }
+.buttonWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+.buttonWrapper svg{
+    font-size: 1.3rem;
+    margin-left: 5px;
+}
+.buttonWrapper button{
+    padding: 1rem;
+    background-color: #FF2171;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+}

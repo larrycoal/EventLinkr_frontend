@@ -1,5 +1,6 @@
 import React from "react";
 import style from "./input.module.css";
+import {AiOutlineArrowRight} from 'react-icons/ai'
 import usePlacesAutocomplete, {
   getGeocode,
   getLatLng,
@@ -53,8 +54,8 @@ const DescriptionInput = ({ label, name, onChange, placeholder }) => {
       <textarea
         name={name}
         id={name}
-        rows="5"
-        cols="40"
+        rows="10"
+        cols="20"
         placeholder={placeholder}
         onChange={handleChange}
       ></textarea>
@@ -119,4 +120,25 @@ const LocationInput = ({ label, type, name, onChange }) => {
     </div>
   );
 };
-export { TextInput, DateInput, LocationInput, SlugInput, DescriptionInput };
+const Button = ({ text, handleClick, width }) => {
+  return (
+    <div className={style.buttonWrapper}>
+      <button
+        className={style.button}
+        onClick={handleClick}
+        style={{width:`${width+"px"}`}}
+      >
+        {text}
+        <AiOutlineArrowRight/>
+      </button>
+    </div>
+  );
+};
+export {
+  TextInput,
+  DateInput,
+  LocationInput,
+  SlugInput,
+  DescriptionInput,
+  Button,
+};
